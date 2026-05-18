@@ -31,7 +31,7 @@ export function HomePage() {
         localStorage.getItem("email") ||
         "guest@example.com";
 
-      await fetch("http://localhost:5000/api/history", {
+      await fetch("https://reveal-it-backend.onrender.com/api/history", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,10 +79,10 @@ export function HomePage() {
       }
 
       const url = excludeBarcode
-        ? `http://localhost:5000/api/safer-alternatives?excludeBarcode=${encodeURIComponent(
+        ? `https://reveal-it-backend.onrender.com/api/safer-alternatives?excludeBarcode=${encodeURIComponent(
             excludeBarcode,
           )}&t=${Date.now()}`
-        : `http://localhost:5000/api/safer-alternatives?t=${Date.now()}`;
+        : `https://reveal-it-backend.onrender.com/api/safer-alternatives?t=${Date.now()}`;
 
       const response = await fetch(url, {
         cache: "no-store",
@@ -175,7 +175,7 @@ export function HomePage() {
         newProduct = getNextProduct();
       } else {
         const response = await fetch(
-          `http://localhost:5000/api/search?name=${encodeURIComponent(input)}`,
+          `https://reveal-it-backend.onrender.com/api/search?name=${encodeURIComponent(input)}`,
         );
 
         const data = await response.json();

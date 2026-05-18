@@ -124,13 +124,16 @@ export function ProductAnalysis({ product }: ProductAnalysisProps) {
     try {
       setAiLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/ai-analysis", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://reveal-it-backend.onrender.com/api/ai-analysis",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ product }),
         },
-        body: JSON.stringify({ product }),
-      });
+      );
 
       const data = await response.json();
 

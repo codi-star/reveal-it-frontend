@@ -13,7 +13,7 @@ export function AdminFeedbackPage() {
   const fetchFeedback = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/product-feedback",
+        "https://reveal-it-backend.onrender.com/api/admin/product-feedback",
       );
 
       const data = await response.json();
@@ -35,7 +35,7 @@ export function AdminFeedbackPage() {
   const updateStatus = async (id: string, status: string) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/product-feedback/${id}`,
+        `https://reveal-it-backend.onrender.com/api/admin/product-feedback/${id}`,
         {
           method: "PATCH",
           headers: {

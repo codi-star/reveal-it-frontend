@@ -43,7 +43,7 @@ export function Scanner({ onProductDetected }: ScannerProps) {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/suggestions?query=${encodeURIComponent(
+          `https://reveal-it-backend.onrender.com/api/suggestions?query=${encodeURIComponent(
             searchQuery.trim(),
           )}`,
         );
@@ -76,7 +76,7 @@ export function Scanner({ onProductDetected }: ScannerProps) {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/barcode?code=${encodeURIComponent(
+        `https://reveal-it-backend.onrender.com/api/barcode?code=${encodeURIComponent(
           cleanBarcode,
         )}`,
       );
@@ -108,7 +108,7 @@ export function Scanner({ onProductDetected }: ScannerProps) {
       setLoading(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/search?name=${encodeURIComponent(name)}`,
+        `https://reveal-it-backend.onrender.com/api/search?name=${encodeURIComponent(name)}`,
       );
 
       const product = await response.json();

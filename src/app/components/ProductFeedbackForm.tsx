@@ -33,7 +33,7 @@ export function ProductFeedbackForm({ barcode }: ProductFeedbackFormProps) {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/product-feedback",
+        "https://reveal-it-backend.onrender.com/api/product-feedback",
         {
           method: "POST",
           headers: {

@@ -18,13 +18,13 @@ export function HistoryPage() {
   const fetchUserData = async () => {
     try {
       const historyResponse = await fetch(
-        `http://localhost:5000/api/history?userEmail=${encodeURIComponent(
+        `https://reveal-it-backend.onrender.com/api/history?userEmail=${encodeURIComponent(
           userEmail,
         )}`,
       );
 
       const feedbackResponse = await fetch(
-        `http://localhost:5000/api/my-feedback?userEmail=${encodeURIComponent(
+        `https://reveal-it-backend.onrender.com/api/my-feedback?userEmail=${encodeURIComponent(
           userEmail,
         )}`,
       );
