@@ -1,4 +1,6 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import React from "react";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+
 import { LoginPage } from "./pages/LoginPage";
 import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
@@ -22,9 +24,18 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <Navigate to="/login" replace />,
+
     children: [
-      { index: true, element: <Navigate to="/login" replace /> },
-      { path: "login", element: <LoginPage /> },
+      {
+        index: true,
+        element: <Navigate to="/login" replace />,
+      },
+
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
 
       {
         path: "home",
@@ -73,7 +84,10 @@ export const router = createBrowserRouter([
         ),
       },
 
-      { path: "*", element: <Navigate to="/login" replace /> },
+      {
+        path: "*",
+        element: <Navigate to="/login" replace />,
+      },
     ],
   },
 ]);
